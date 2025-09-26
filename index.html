@@ -1,307 +1,657 @@
 <!DOCTYPE HTML>
-<!--
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<html lang="en">
 	<head>
 		<title>Shuya Feng</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<style>
+			/* Academic theme styling inspired by zhiyuanyu.org */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			body {
+				font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				line-height: 1.5;
+				color: #333;
+				background: #fff;
+				font-size: 14px;
+			}
+			
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 20px;
+			}
+			
+			/* Header */
+			header {
+				background: #fff;
+				border-bottom: 1px solid #e5e7eb;
+				position: sticky;
+				top: 0;
+				z-index: 100;
+			}
+			
+			nav {
+				padding: 1rem 0;
+			}
+			
+			nav ul {
+				list-style: none;
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+			}
+			
+			nav .logo {
+				font-weight: 600;
+				font-size: 1.1rem;
+				color: #111;
+			}
+			
+			nav a {
+				text-decoration: none;
+				color: #666;
+				font-weight: 400;
+				transition: color 0.2s;
+			}
+			
+			nav a:hover {
+				color: #2563eb;
+			}
+			
+			/* Main content */
+			main {
+				padding: 5rem 0 2rem 0;
+			}
+			
+			.hero {
+				margin-bottom: 2rem;
+			}
+			
+			.hero h1 {
+				font-size: 2.2rem;
+				font-weight: 700;
+				color: #111;
+				margin-bottom: 0.5rem;
+				line-height: 1.2;
+			}
+			
+			.hero h2 {
+				font-size: 1.1rem;
+				font-weight: 400;
+				color: #666;
+				margin-bottom: 3rem;
+			}
+			
+			/* Biography section */
+			.bio-section {
+				display: grid;
+				grid-template-columns: 280px 1fr;
+				gap: 3rem;
+				margin-top: 2rem;
+				margin-bottom: 3rem;
+			}
+			
+			.profile-left {
+				text-align: center;
+			}
+			
+			.profile-photo {
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				object-fit: cover;
+				margin-bottom: 1rem;
+			}
+			
+			.profile-left .name {
+				font-size: 1.2rem;
+				font-weight: 600;
+				color: #111;
+				margin-bottom: 0.5rem;
+			}
+			
+			.profile-left .title {
+				color: #666;
+				font-size: 0.75rem;
+				margin-bottom: 1.5rem;
+				line-height: 1.4;
+			}
+			
+			.university-logo {
+				margin: 1.5rem 0;
+			}
+			
+			.logo-placeholder {
+				background: #f3f4f6;
+				border: 2px solid #e5e7eb;
+				border-radius: 8px;
+				padding: 1rem;
+				color: #666;
+				font-size: 0.8rem;
+				font-weight: 500;
+			}
+			
+			.uab-logo {
+				max-width: 120px;
+				height: auto;
+				display: block;
+				margin: 0 auto;
+			}
+			
+			.social-links {
+				display: flex;
+				justify-content: center;
+				gap: 1rem;
+				margin-top: 1.5rem;
+			}
+			
+			.social-links a {
+				display: inline-block;
+				font-size: 1rem;
+				text-decoration: none;
+				transition: transform 0.2s;
+			}
+			
+			.social-links a:hover {
+				transform: scale(1.1);
+			}
+			
+			.interests-education-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 1.5rem;
+				margin-top: 1.5rem;
+			}
+			
+			.interests-section h4, .education-section h4 {
+				font-size: 0.9rem;
+				font-weight: 600;
+				color: #111;
+				margin-bottom: 0.6rem;
+			}
+			
+			.interests-section ul {
+				list-style: disc;
+				margin-left: 1.2rem;
+			}
+			
+			.interests-section li {
+				margin-bottom: 0.3rem;
+				color: #555;
+				font-size: 0.85rem;
+			}
+			
+			.cv-download {
+				margin: 1rem 0;
+			}
+			
+			.cv-link {
+				color: #2563eb;
+				text-decoration: none;
+				font-weight: 500;
+			}
+			
+			.cv-link:hover {
+				text-decoration: underline;
+			}
+			
+			.bio-content h3 {
+				font-size: 1.1rem;
+				font-weight: 600;
+				color: #111;
+				margin-bottom: 0.8rem;
+			}
+			
+			.bio-content p {
+				margin-bottom: 0.8rem;
+				color: #555;
+				line-height: 1.5;
+				font-size: 0.9rem;
+			}
+			
+			.recruitment-notice {
+				background: #dbeafe;
+				border: 1px solid #93c5fd;
+				border-radius: 8px;
+				padding: 1rem;
+				margin: 1.5rem 0;
+			}
+			
+			.recruitment-notice strong {
+				color: #1d4ed8;
+			}
+			
+			/* Sections */
+			.section {
+				margin-bottom: 2rem;
+			}
+			
+			.section h3 {
+				font-size: 1rem;
+				font-weight: 600;
+				color: #111;
+				margin-bottom: 0.6rem;
+			}
+			
+			.interests-list {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				list-style: none;
+			}
+			
+			.interests-list li {
+				background: #f3f4f6;
+				padding: 0.3rem 0.6rem;
+				border-radius: 6px;
+				font-size: 0.75rem;
+				color: #374151;
+			}
+			
+			.education-item {
+				margin-bottom: 1rem;
+			}
+			
+			.education-item .degree {
+				font-weight: 500;
+				color: #111;
+				font-size: 0.85rem;
+			}
+			
+			.education-item .school {
+				color: #666;
+				font-size: 0.8rem;
+			}
+			
+			.education-item .year {
+				color: #888;
+				font-size: 0.75rem;
+			}
+			
+			/* News section */
+			.news-item {
+				padding: 0.5rem 0;
+				border-bottom: 1px solid #f3f4f6;
+			}
+			
+			.news-item:last-child {
+				border-bottom: none;
+			}
+			
+			.news-date {
+				font-weight: 500;
+				color: #2563eb;
+				font-size: 0.75rem;
+			}
+			
+			.news-type {
+				display: inline-block;
+				background: #fee2e2;
+				color: #dc2626;
+				padding: 0.05rem 0.2rem;
+				border-radius: 2px;
+				font-size: 0.65rem;
+				font-weight: 400;
+				margin: 0 0.2rem;
+			}
+			
+			.news-type.award {
+				background: #fef3c7;
+				color: #d97706;
+			}
+			
+			.news-type.paper {
+				background: #dbeafe;
+				color: #2563eb;
+			}
+			
+			.news-type.position {
+				background: #f0f4e8;
+				color: #556b2f;
+			}
+			
+			/* Publications */
+			.publication {
+				margin-bottom: 2rem;
+				padding: 1.5rem;
+				border: 1px solid #e5e7eb;
+				border-radius: 8px;
+			}
+			
+			.publication h4 {
+				font-size: 0.9rem;
+				font-weight: 600;
+				color: #111;
+				margin-bottom: 0.4rem;
+			}
+			
+			.publication .venue {
+				color: #2563eb;
+				font-weight: 500;
+				margin-bottom: 0.4rem;
+				font-size: 0.85rem;
+			}
+			
+			.publication .authors {
+				color: #666;
+				margin-bottom: 0.4rem;
+				font-size: 0.8rem;
+			}
+			
+			.publication .description {
+				color: #555;
+				font-size: 0.8rem;
+				line-height: 1.4;
+			}
+			
+			/* Contact */
+			.contact-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1rem;
+				margin-top: 1rem;
+			}
+			
+			.contact-item {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+			
+			.contact-item span {
+				font-size: 1rem;
+			}
+			
+			/* Footer */
+			footer {
+				border-top: 1px solid #e5e7eb;
+				padding: 2rem 0;
+				margin-top: 4rem;
+				text-align: center;
+				color: #666;
+				font-size: 0.9rem;
+			}
+			
+			/* Responsive */
+			@media (max-width: 768px) {
+				.hero h1 {
+					font-size: 2rem;
+				}
+				
+				.bio-section {
+					grid-template-columns: 1fr;
+					text-align: center;
+				}
+				
+				.profile-left {
+					margin-bottom: 2rem;
+				}
+				
+				.interests-education-grid {
+					grid-template-columns: 1fr;
+				}
+				
+				nav ul {
+					flex-wrap: wrap;
+					gap: 1rem;
+				}
+				
+				.container {
+					padding: 0 15px;
+				}
+			}
+		</style>
 	</head>
-	<body class="is-preload">
-
-		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-					<li><a href="#top">Home</a></li>
-					<li><a href="#work">Education</a></li>
-					<li><a href="#portfolio">Research</a></li>
+	<body>
+		<header>
+			<nav class="container">
+				<ul>
+					<li class="logo">Shuya Feng</li>
+					<li><a href="#home">Home</a></li>
+					<li><a href="#news">News</a></li>
+					<li><a href="#publications">Publications</a></li>
+					<li><a href="#teaching">Teaching</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
+		</header>
 
-		<!-- Home and Work Combined -->
-			<article id="top" class="wrapper style1">
-				<div class="container">
-					<div class="row">
-						<!-- Biography Image -->
-						<div class="col-4 col-5-large col-12-medium">
-							<span class="image fit"><img src="images/bio.jpg" alt="" /></span>
-						</div>
-						<!-- Biography and Work Content -->
-						<div class="col-8 col-7-large col-12-medium">
-							<header>
-								<h1><strong>Biography</strong></h1>
-							</header>
-							<p><strong>Shuya Feng</strong> is a Ph.D. student in Computer Science and Engineering at UConn. Her academic professor is Yuan Hong. Her research interest is differential privacy and machine learning security. Before studying at UConn, she completed her master's degree from Illinois Institute of Technology, where she graduated in 2017. </p>
-							
-							<!-- Research Interests -->
-							<h2>Research Interests</h2>
-							<ul>
-								<li>Differential Privacy</li>
-								<li>Privacy-preserving Machine Learning</li>
-								<li>Distributed Machine Learning Security</li>
-								<li>Data Privacy and Security</li>
-							</ul>
-							
-							<!-- Education -->
-							<h3>Education</h3>
-							<ul>
-								<li>Ph.D. Candidate in Computer Science and Engineering, University of Connecticut, Aug 2022 to Present</li>
-								<li>Ph.D. Candidate in Computer Science, Illinois Institute of Technology, Aug 2019 to May 2022</li>
-								<li>M.S. in Computer Science, Illinois Institute of Technology, Aug 2015 to May 2017</li>
-								<li>B.S. in Computer Science, Harbin Institute of Technology, Aug 2011 to July 2015</li>
-							</ul>
-						</div>
+		<main class="container">
+			<!-- Biography Section -->
+			<section class="bio-section" id="home">
+				<div class="profile-left">
+					<img src="images/bio.jpg" alt="Shuya Feng" class="profile-photo">
+					<h2 class="name">Shuya Feng</h2>
+					<p class="title">Assistant Professor in Computer Science</p>
+					
+					<!-- University Logo -->
+					<div class="university-logo">
+						<img src="images/uab_logo.png" alt="UAB Logo" class="uab-logo">
+					</div>
+					
+					<!-- Social Links -->
+					<div class="social-links">
+						<a href="https://scholar.google.com/citations?hl=en&user=HpDG3SEAAAAJ&view_op=list_works" target="_blank" title="Google Scholar">🎓</a>
+						<a href="https://github.com/ShuyaFeng" target="_blank" title="GitHub">💻</a>
+						<a href="mailto:fengs@uab.edu" title="Email">📧</a>
+						<a href="#" target="_blank" title="CV">📄</a>
 					</div>
 				</div>
-			</article>
-
-			
-
-		<!-- Home -->
-			<!-- <article id="top" class="wrapper style1">
-				<div class="container">
-					<div class="row">
-						<div class="col-4 col-5-large col-12-medium">
-							<span class="image fit"><img src="images/bio.jpg" alt="" /></span>
-						</div>
-						<div class="col-8 col-7-large col-12-medium">
-							<header>
-								<h1><strong>Biography</strong></h1>
-							</header>
-							<p><strong>Shuya Feng</strong> is a Ph.D. student in Computer Science and Engineering at UConn. Her academic professor is Yuan Hong. Her research interest is differential privacy and machine learning security. Before studying at Uconn, she completed his master's degree from Illinois Institute of Technology, where she graduated in 2017. </p>
-							
-						</div>
+				
+				<div class="bio-content">
+					<h3>Biography</h3>
+					<p>I'm an Assistant Professor in the Department of Computer Science at the University of Alabama Birmingham (UAB). My research lies at the intersection of privacy, security, and machine learning, with a particular focus on developing privacy-preserving technologies for real-world applications. I'm especially interested in differential privacy mechanisms for streaming data and distributed machine learning systems.</p>
+					
+					<p>I earned my Ph.D. in Computer Science and Engineering from the University of Connecticut, where I was advised by Dr. Yuan Hong. Before that, I received my M.S. and B.S. in Computer Science from Illinois Institute of Technology and Harbin Institute of Technology, respectively.</p>
+					
+					<div class="recruitment-notice">
+						<strong>🎓 I'm recruiting PhD students!</strong><br>
+						I am recruiting Ph.D. students to join my team! If you're passionate about privacy-preserving technologies, differential privacy, or machine learning security, feel free to reach out to me at fengs [AT] uab [DOT] edu.
 					</div>
-				</div>
-			</article> -->
-
-		<!-- Work -->
-			
-			<!-- <article id="work" class="wrapper style2">
-				<div class="container">
-					<header>
-						<h2></h2>
-						<p></p>
-					</header>
-					<div class="row aln-center">
-		
-		
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<h3>Research Interests</h3>
+					
+					<div class="cv-download">
+						<a href="#" class="cv-link">📄 Download my Curriculum Vitae.</a>
+					</div>
+					
+					<div class="interests-education-grid">
+						<div class="interests-section">
+							<h4>Interests</h4>
 							<ul>
-								<li>Differential Privacy</li>
-								<li>Machine Learning Security</li>
-								<li>Data Privacy and Security</li>
-								<p> <p>
+								<li>Security and Privacy</li>
+								<li>Data Privacy & Differential Privacy</li>
+								<li>Responsible AI</li>
+								<li>ML Privacy & Security</li>
+								<li>LLM Privacy & Security</li>
+								<li>Usable Security</li>
 							</ul>
-							</section>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								
-								<h3>Education</h3>
-								<ul>
-									<li>Ph.D. in CSE. 2022-present</li>
-									<li>Ph.D. in CS.  2019-2022</li>
-									<li>M.Sc. in CS.  2015-2017 </li>
-									<li>B.Sc. in CS.  2011-2015</li>
-								</ul>
-							</section>
-						</div>
-					</div>
-					<footer>
-						<p></p>
-						<a href="#portfolio" class="button large scrolly">See some of my recent work</a>
-					</footer>
-				</div>
-			</article> -->
-
-		<!-- Portfolio -->
-			<article id="portfolio" class="wrapper style3">
-				<div class="container">
-					<header>
-						<h2>Featured Publications</h2>
-						<li>
-							Feng, Shuya<sup>*</sup>, Meisam Mohammady<sup>*</sup>, Han Wang, Xiaochen Li, Zhan Qin, and Yuan Hong. 
-							"DPI: Ensuring Strict Differential Privacy for Infinite Data Streaming." 
-							In Proceedings of the 45th IEEE Symposium on Security and Privacy (S&amp;P). 
-							[Acceptance Rate in Cycle 2: 83/558=14.9%, <sup>*</sup>Equal Contributions]
-						</li>
-						<!-- <li>
-							Feng, Shuya, Jia He, and Maggie Cheng. "Security Analysis of Block Withholding Attacks in Blockchain," 
-							presented at ICC 2021 - IEEE International Conference on Communications, Montreal, QC, Canada, 2021, 
-							pp. 1-6, doi: 10.1109/ICC42927.2021.9500630.
-						</li> -->
-						<li>Wang, Han, Jayashree Sharma, Shuya Feng, Kai Shu, and Yuan Hong. "A Model-Agnostic Approach to Differentially Private Topic Mining." In In Proceedings of the 28th SIGKDD Conference on Knowledge Discovery and Data Mining (KDD'22). 2022.</li>
-					</header>
-						<h2>News</h2>
-
-						<ul>
-							<li>Awarded the Synchrony Fellowship by the UConn CSE department in August 2023.</li>
-							<li>Contributed expertise as a reviewer for the WWW (World Wide Web) Conference in November 2023.</li>
-							<li>Served as a reviewer for the IEEE INFOCOM Conference in September 2023.</li>
-							<li>Participated in the CCS (ACM Conference on Computer and Communications Security) as a reviewer in May 2023.</li>
-							<li>Engaged as a reviewer for the RAID (Research in Attacks, Intrusions, and Defenses) Conference in May 2023.</li>
-							<li>Provided insights as a reviewer for the AsiaCCS (ACM ASIA Conference on Computer and Communications Security) in March 2023.</li>
-							<li>Served as an external reviewer for The Web Conference in 2023.</li>
-							<li>Participated as an external reviewer for the ACM Conference on Autonomous Agents and Multiagent Systems (AAMAS) in 2023.</li>
-							<li>I am the TA for CSE1010 Lab Introduction to Computing for Engineers in the Fall of 2022.</li>
-							<li>Offered expertise as a reviewer for the WEB Conference in November 2022.</li>
-							<li>Contributed as a reviewer for the PoPETs (Privacy Enhancing Technologies Symposium) in September 2022.</li>
-							<li>Contributed as an external reviewer for the IEEE International Conference on Trust Privacy and Security in Intelligent Systems and Applications in 2022.</li>
-							<li>Acted as an external reviewer for the Conference on Data and Applications Security and Privacy (DBSEC) in 2022.</li>
-							<li>Involved in the European Symposium on Research in Computer Security (ESORICS) as an external reviewer in 2022.</li>
-							<li>I am the TA for CS425 Database Organization in the Spring of 2022.</li>
-							<li>I am the TA for CS528 Data Privacy and Security in the Fall of 2021.</li>
-							<li>Provided insights as a reviewer for the USENIX Security Symposium in March 2023.</li>
-							<li>Participated as an external reviewer for the 21st IEEE/ACM International Symposium on Cluster, Cloud, and Internet Computing (CCGrid) in 2021.</li>
-						</ul>
 						
-						<br>
-						<header>
-						<h2>Publications</h2>
-						<li>
-							Feng, Shuya<sup>*</sup>, Meisam Mohammady<sup>*</sup>, Han Wang, Xiaochen Li, Zhan Qin, and Yuan Hong. 
-							"DPI: Ensuring Strict Differential Privacy for Infinite Data Streaming." 
-							In Proceedings of the 45th IEEE Symposium on Security and Privacy (S&amp;P). 
-							[Acceptance Rate in Cycle 2: 83/558=14.9%, <sup>*</sup>Equal Contributions]
-						</li>
-						<li>Wang, Han, Jayashree Sharma, Shuya Feng, Kai Shu, and Yuan Hong. "A Model-Agnostic Approach to Differentially Private Topic Mining." In In Proceedings of the 28th SIGKDD Conference on Knowledge Discovery and Data Mining (KDD'22). 2022.</li>
-						<li>
-							Feng, Shuya, Jia He, and Maggie Cheng. "Security Analysis of Block Withholding Attacks in Blockchain," 
-							presented at ICC 2021 - IEEE International Conference on Communications, Montreal, QC, Canada, 2021, 
-							pp. 1-6, doi: 10.1109/ICC42927.2021.9500630.
-						</li>
-					<!-- <div class="row">
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<h3><a href="#">Magna feugiat</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
+						<div class="education-section">
+							<h4>Education</h4>
+							<div class="education-item">
+								<div class="degree">🎓 Ph.D. Computer Science & Engineering, 2025</div>
+								<div class="school">University of Connecticut</div>
+							</div>
+							<div class="education-item">
+								<div class="degree">🎓 M.S. Computer Science, 2017</div>
+								<div class="school">Illinois Institute of Technology</div>
+							</div>
+							<div class="education-item">
+								<div class="degree">🎓 B.S. Computer Science, 2015</div>
+								<div class="school">Harbin Institute of Technology</div>
+							</div>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								<h3><a href="#">Veroeros primis</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-								<h3><a href="#">Lorem ipsum</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								<h3><a href="#">Tempus dolore</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-								<h3><a href="#">Feugiat aliquam</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<h3><a href="#">Sed amet ornare</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div> -->
 					</div>
-					<footer>
-						<p></p>
-						<!-- <a href="#contact" class="button large scrolly">Get in touch with me</a> -->
-					</footer>
 				</div>
-			</article>
+			</section>
 
-		<!-- Contact -->
-			<article id="contact" class="wrapper style4">
-				<div class="container medium">
-					<header>
-						<h2>Contact me</h2>
-						<p>Shuya.feng AT uconn.edu</p>
-					</header>
-					<!-- <div class="row">
-						<div class="col-12">
-							<form method="post" action="#">
-								<div class="row">
-									<div class="col-6 col-12-small">
-										<input type="text" name="name" id="name" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="text" name="email" id="email" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<input type="text" name="subject" id="subject" placeholder="Subject" />
-									</div>
-									<div class="col-12">
-										<textarea name="message" id="message" placeholder="Message"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" /></li>
-											<li><input type="reset" value="Clear Form" class="alt" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</div> -->
-						<!-- <div class="col-12">
-							<hr />
-							<h3>Find me on ...</h3>
-							<ul class="social">
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-								<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
-								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								
-								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
-								<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
-								<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
-								<li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
-								<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
-								<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
-								<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
-								
-							</ul>
-							<hr />
-						</div> -->
+			<!-- News Section -->
+			<section class="section" id="news">
+				<h3>News</h3>
+				<!-- <div class="news-item">
+					<span class="news-date">[2025]</span>
+					<span class="news-type paper">Paper</span>
+					Paper accepted at CODASPY 2025: <em>Harmonizing Differential Privacy Mechanisms in Federated Learning</em>.
+				</div>
+				<div class="news-item">
+					<span class="news-date">[2025]</span>
+					<span class="news-type paper">Paper</span>
+					Paper accepted at NDSS 2025: <em>Delay-allowed Differentially Private Data Stream Release</em>.
+				</div> -->
+				<div class="news-item">
+					<span class="news-date">[Aug. 2025]</span>
+					<span class="news-type position">Position</span>
+					Started as Assistant Professor at University of Alabama Birmingham!
+				</div>
+				<div class="news-item">
+					<span class="news-date">[Nov. 2024]</span>
+					<span class="news-type">Talk</span>
+					Guest Lecture at CSE5173 Deep Learning, University of Cincinnati.
+				</div>
+				<div class="news-item">
+					<span class="news-date">[July 2024]</span>
+					<span class="news-type award">Award</span>
+					Received Conference Participation Award by The Graduate School UConn.
+				</div>
+				<div class="news-item">
+					<span class="news-date">[May 2024]</span>
+					<span class="news-type award">Award</span>
+					Received The Marion and Frederick Buckman Engineering Fellowship.
+				</div>
+				<div class="news-item">
+					<span class="news-date">[May 2024]</span>
+					<span class="news-type">Internship</span>
+					Completed Research Intern position at Amazon, NYC.
+				</div>
+				<div class="news-item">
+					<span class="news-date">[Apr. 2024]</span>
+					<span class="news-type award">Award</span>
+					Received Travel Conferenceship by IEEE S&P.
+				</div>
+			</section>
+
+			<!-- Publications Section -->
+			<section class="section" id="publications">
+				<h3>Conference Papers</h3>
+				
+				<div class="publication">
+					<h4>Harmonizing Differential Privacy Mechanisms in Federated Learning: Ensuring Boosted Accuracy and Convergence</h4>
+					<div class="venue">(CODASPY 2025)</div>
+					<div class="authors">Shuya Feng, Meisam Mohammady, Hanbin Hong, Shenao Yan, Binghui Wang, Ashish Kundu, Yuan Hong</div>
+					<div class="description">This work addresses privacy challenges in federated learning by harmonizing differential privacy mechanisms to ensure both privacy protection and model accuracy convergence.</div>
+				</div>
+
+				<div class="publication">
+					<h4>Delay-allowed Differentially Private Data Stream Release</h4>
+					<div class="venue">(NDSS 2025)</div>
+					<div class="authors">Xiaochen Li, Zhan Qin, Kui Ren, Chen Gong, Shuya Feng, Yuan Hong, Tianhao Wang</div>
+					<div class="description">Novel approach to differentially private data stream release that allows controlled delays to improve privacy-utility trade-offs in streaming applications.</div>
+				</div>
+
+				<div class="publication">
+					<h4>RankFlow: A Multi-Role Collaborative Reranking Workflow Utilizing Large Language Models</h4>
+					<div class="venue">(WWW 2025)</div>
+					<div class="authors">Can Jin, Hongwu Peng, Anxiang Zhang, Nuo Chen, Jiahui Zhao, Xi Xie, Kuangzheng Li, Shuya Feng, Kai Zhong, Caiwen Ding, Dimitris N. Metaxas</div>
+					<div class="description">Multi-role collaborative framework for reranking using large language models to improve information retrieval and ranking performance.</div>
+				</div>
+
+				<div class="publication">
+					<h4>DPI: Ensuring Strict Differential Privacy for Infinite Data Streaming</h4>
+					<div class="venue">(IEEE S&P 2025)</div>
+					<div class="authors">Shuya Feng*, Meisam Mohammady*, Han Wang, Xiaochen Li, Zhan Qin, Yuan Hong</div>
+					<div class="description">Addresses the challenge of ensuring differential privacy in infinite data streams with strict privacy guarantees. <em>[Acceptance Rate: 14.9%, *Equal Contribution]</em></div>
+				</div>
+
+				<div class="publication">
+					<h4>Enhanced body composition estimation from 3d body scans</h4>
+					<div class="venue">(BIOINFORMATICS 2024)</div>
+					<div class="authors">Boyuan Feng, Yijiang Zheng, Ruting Cheng, Khashaya Vaziri, Shuya Feng, James Hahn</div>
+					<div class="description">Novel method for estimating body composition from 3D body scans using advanced computational techniques.</div>
+				</div>
+
+				<div class="publication">
+					<h4>Towards Accurate and Stronger Local Differential Privacy for Federated Learning with Staircase Randomized Response</h4>
+					<div class="venue">(CODASPY 2024)</div>
+					<div class="authors">Matta Varun, Shuya Feng, Han Wang, Shamik Sural, Yuan Hong</div>
+					<div class="description">Improved local differential privacy mechanisms for federated learning with enhanced accuracy and stronger privacy guarantees. <em>[Acceptance Rate: 34/160=21.25%]</em></div>
+				</div>
+
+				<div class="publication">
+					<h4>A Model-Agnostic Approach to Differentially Private Topic Mining</h4>
+					<div class="venue">(ACM KDD 2022)</div>
+					<div class="authors">Han Wang*, Jayashree Sharma*, Shuya Feng, Kai Shu, Yuan Hong</div>
+					<div class="description">Framework for privacy-preserving topic mining that works across different ML models. <em>[Acceptance Rate: 254/1695=14.99%, *Equal Contribution]</em></div>
+				</div>
+
+				<div class="publication">
+					<h4>Security Analysis of Block Withholding Attacks in Blockchain</h4>
+					<div class="venue">(IEEE ICC 2021)</div>
+					<div class="authors">Shuya Feng, Jia He, Maggie Cheng</div>
+					<div class="description">Analysis of security vulnerabilities in blockchain mining protocols and mitigation strategies for block withholding attacks.</div>
+				</div>
+			</section>
+
+			<!-- Teaching Section -->
+			<section class="section" id="teaching">
+				<h3>Teaching</h3>
+				
+				<div class="education-item">
+					<div class="degree">CS334/534 Networking</div>
+					<div class="school">University of Alabama Birmingham</div>
+					<div class="year">Aug 2025 - Dec 2025 • Instructor</div>
+				</div>
+				
+				<div class="education-item">
+					<div class="degree">CSE4400 Computer Security</div>
+					<div class="school">University of Connecticut</div>
+					<div class="year">Jan 2023 - May 2023 • Teaching Assistant</div>
+				</div>
+				
+				<div class="education-item">
+					<div class="degree">CSE1010 Introduction to Computing for Engineers</div>
+					<div class="school">University of Connecticut</div>
+					<div class="year">Aug 2022 - Dec 2022 • Teaching Assistant</div>
+				</div>
+				
+				<div class="education-item">
+					<div class="degree">CS425 Database Organization</div>
+					<div class="school">Illinois Institute of Technology</div>
+					<div class="year">Jan 2022 - May 2022 • Teaching Assistant</div>
+				</div>
+				
+				<div class="education-item">
+					<div class="degree">CS528 Data Privacy and Security</div>
+					<div class="school">Illinois Institute of Technology</div>
+					<div class="year">Aug 2021 - Dec 2021 • Teaching Assistant</div>
+				</div>
+			</section>
+
+			<!-- Contact Section -->
+			<section class="section" id="contact">
+				<h3>Contact</h3>
+				<div class="contact-grid">
+					<div class="contact-item">
+						<span>📧</span>
+						<div>fengs@uab.edu</div>
 					</div>
-					<!-- <footer>
-						<ul id="copyright">
-							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer> -->
+					<div class="contact-item">
+						<span>🏢</span>
+						<div>Department of Computer Science<br>University of Alabama Birmingham</div>
+					</div>
 				</div>
-			</article>
+			</section>
+		</main>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+		<footer>
+			<div class="container">
+				Copyright © 2024 Shuya Feng · Last update in Sep 2025
+			</div>
+		</footer>
 	</body>
 </html>
